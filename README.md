@@ -18,7 +18,7 @@ Dibuat sebagai latihan untuk memahami **WebSocket, database PostgreSQL, dan komu
 ## Cara Menjalankan
 
 ###  Persiapan Database PostgreSQL
-Pastikan PostgreSQL sudah berjalan, lalu buat database dan tabel:  
+Pastikan PostgreSQL sudah berjalan, lalu buat database dan tabel :  
 ```sql
 CREATE DATABASE chatdb;
 \c chatdb
@@ -37,15 +37,20 @@ cd real-time_chat_api
 ```
 
 ### Jalankan server
-```go run main.go```
+```
+go run main.go
+```
 
 ### Uji Coba di Postman atau HTML
 Gunakan WebSocket request ke :
-```ws://localhost:8080/ws```
+```
+ws://localhost:8080/ws
+```
 
 ### Kirim JSON seperti ini:
-
-```{ "username": "nama anda", "message": "Halo, ini pesan pertama!" }```
+```
+{"username": "nama anda", "message": "Halo, ini pesan pertama!"}
+```
 
 ### Uji dengan HTML Client
 ```html
@@ -61,7 +66,6 @@ Gunakan WebSocket request ke :
     <button onclick="sendMessage()">Kirim</button>
     <ul id="chat"></ul>
     <script>
-        
         let ws = new WebSocket("ws://localhost:8080/ws");
         ws.onmessage = (event) => {
             let msg = JSON.parse(event.data);
@@ -69,7 +73,6 @@ Gunakan WebSocket request ke :
             li.textContent = msg.username + ": " + msg.message;
             document.getElementById("chat").appendChild(li);
         };
-        
         function sendMessage() {
             let msg = document.getElementById("message").value;
             ws.send(JSON.stringify({ username: "User1", message: msg }));
