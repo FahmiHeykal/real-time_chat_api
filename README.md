@@ -31,9 +31,10 @@ CREATE TABLE messages (
 ```
 
 ## Clone Proyek & Jalankan Server
-
+```
 ''git clone https://github.com/FahmiHyekal/real-time_chat_api.git
 cd real-time_chat_api
+```
 
 # Jalankan server
 go run main.go
@@ -52,7 +53,7 @@ Gunakan WebSocket request ke :
 
 
 # Uji dengan HTML Client
-```
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -80,4 +81,3 @@ Gunakan WebSocket request ke :
     </script>
 </body>
 </html>
-```
