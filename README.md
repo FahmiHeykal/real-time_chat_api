@@ -47,9 +47,9 @@ Gunakan WebSocket request ke :
 ws://localhost:8080/ws
 ```
 
-### Kirim JSON seperti ini:
+### Kirim JSON seperti ini :
 ```
-{"username": "nama anda", "message": "Halo, ini pesan pertama!"}
+{"username": "FahmiHeykal", "message": "Halo, ini pesan pertama!"}
 ```
 
 ### Uji dengan HTML Client
