@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat WebSocket</title>
+</head>
+<body>
+    <h2>Chat Real-time</h2>
+    <ul id="chat"></ul>
+    <input type="text" id="message" placeholder="Ketik pesan...">
+    <button onclick="sendMessage()">Kirim</button>
+
+    <script>
+        let ws = new WebSocket("ws://localhost:8080/ws");
+
+        ws.onopen = () => {
+            console.log("Terhubung ke WebSocket!");
+            loadHistory(); // Ambil history chat saat pertama kali terhubung
+        };
+
+        ws.onmessage = (event) => {
+            let msg = JSON.parse(event.data);
+            addMessage(msg.username, msg.message);
+        };
+
+        ws.onerror = (error) => console.log("Terjadi kesalahan:", error);
+        ws.onclose = () => console.log("Koneksi WebSocket tertutup!");
+
+        function sendMessage() {
+            let message = document.getElementById("message").value;
+            if (message.trim() === "") return;
+
+            let data = { username: "fahmi", message: message };
+            ws.send(JSON.stringify(data));
+
+            document.getElementById("message").value = "";
+        }
+
+        async function loadHistory() {
+            let response = await fetch("http://localhost:8080/history");
+            let messages = await response.json();
+            messages.forEach(msg => addMessage(msg.username, msg.message));
+        }
+
+        function addMessage(username, message) {
+            let chatBox = document.getElementById("chat");
+            let li = document.createElement("li");
+            li.textContent = `${username}: ${message}`;
+            chatBox.appendChild(li);
+        }
+    </script>
+</body>
+</html>
