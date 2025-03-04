@@ -30,30 +30,25 @@ CREATE TABLE messages (
 );
 ```
 
-## Clone Proyek & Jalankan Server
+### Clone Proyek & Jalankan Server
 ```
 git clone https://github.com/FahmiHyekal/real-time_chat_api.git
 cd real-time_chat_api
 ```
 
-## Jalankan server
+### Jalankan server
 go run main.go
 
-
-## Uji Coba di Postman atau HTML
-
+### Uji Coba di Postman atau HTML
 Gunakan WebSocket request ke :
-
 ```ws://localhost:8080/ws```
 
-
-## Kirim JSON seperti ini:
+### Kirim JSON seperti ini:
 
 ```{ "username": "nama anda", "message": "Halo, ini pesan pertama!" }```
 
-
-## Uji dengan HTML Client
-
+### Uji dengan HTML Client
+```
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -83,3 +78,4 @@ Gunakan WebSocket request ke :
     </script>
 </body>
 </html>
+```
