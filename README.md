@@ -48,7 +48,7 @@ Gunakan WebSocket request ke :
 ```{ "username": "nama anda", "message": "Halo, ini pesan pertama!" }```
 
 ### Uji dengan HTML Client
-```
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
