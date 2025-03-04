@@ -37,7 +37,7 @@ cd real-time_chat_api
 ```
 
 ### Jalankan server
-go run main.go
+```go run main.go```
 
 ### Uji Coba di Postman atau HTML
 Gunakan WebSocket request ke :
