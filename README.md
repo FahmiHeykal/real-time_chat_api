@@ -32,7 +32,7 @@ CREATE TABLE messages (
 
 ## Clone Proyek & Jalankan Server
 ```
-''git clone https://github.com/FahmiHyekal/real-time_chat_api.git
+git clone https://github.com/FahmiHyekal/real-time_chat_api.git
 cd real-time_chat_api
 ```
 
